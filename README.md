@@ -2,6 +2,7 @@ Matrix-Decomposition
 ====================
 
 Luzia de Menezes Romanetto <luziaromanetto@gmail.com>
+
 Luis Gustavo Nonato <lgustavo.nonato@gmail.com>
 
 Last update: 09/Jun/2014
