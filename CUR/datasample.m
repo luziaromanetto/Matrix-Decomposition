@@ -7,15 +7,17 @@ function [D I] = datasample(data,k,W)
         I = false;
     end
     
-    X = 1:N;
+    X = 1:N';
     
     for i=1:k
         
         n = length(X);
-        [I(i) pos] = randsample(X,1, true,W(X));
+        pos = randsample(n,1, true,W(X));
+        
+        I(i)=X(pos);
         
         Z = X;
-        X = zeros(1:(n-1));
+        X = zeros((n-1),1);
         
         if( pos > 1 )
             X(1:pos-1)=Z(1:pos-1);
@@ -23,6 +25,7 @@ function [D I] = datasample(data,k,W)
         if( pos < n ) 
             X(pos:n-1)=Z(pos+1:n);
         end
+        
     end
     
     D = data(I);
