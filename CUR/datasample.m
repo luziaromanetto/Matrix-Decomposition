@@ -28,5 +28,5 @@ function [D I] = datasample(data,k,W)
         
     end
     
-    D = data(I);
+    D = data(:,I);
 end
