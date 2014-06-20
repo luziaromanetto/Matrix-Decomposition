@@ -1,0 +1,29 @@
+function LS_DCUR(X, k)
+    [n m] = size(X)
+    
+    for j=1:m 
+        n(j)=log(norm(X(:,j),2));
+        Phi(1,j) = n(j);
+        Lambda(1,j) = n(j)^2;
+        Psi(1,j)=0;
+    end
+    
+    [a seleted] = max(n);
+    
+    W = zeros(n,k);
+    W(:,1)=X(:,selected);
+    
+    for i=2:k
+       for j=1:m
+          p(j) = log(dist(W(:,i-1),X(:,j)));
+          Phi(i,j) = Phi(i-1,j)+p(j);
+          Lambda(i,j) = Lambda(i-1,j) +p(j)^2;
+          Psi(i,j)=Psi(i-1,j)+p(j)*Phi(i-1,j);
+          
+          value(
+       end       
+       
+       
+    end     
+
+end

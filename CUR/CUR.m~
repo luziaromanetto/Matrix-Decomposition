@@ -1,0 +1,15 @@
+function [ C U R ] = CUR( X, k, method)
+
+    if(method == 1)
+        C = CUR_L2(X , k);
+        R = CUR_L2(X', k);
+    elseif(method == 2)
+        C = CUR_SL(X , k);
+        R = CUR_SL(X', k);
+    elseif(method == 3)
+        C = LS_DCUR(X , k);
+        R = LS_DCUR(X', k);
+    end
+    
+    U = pinv(C)*X*pinv(R);
+end
