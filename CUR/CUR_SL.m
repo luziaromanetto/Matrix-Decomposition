@@ -12,11 +12,14 @@ function [C I] = CUR_SL(X, k)
 %
 % Last update: 19/Jun/2014
     [n m]=size(X);
-    [U S V] = svds(X,k);
+    [U S V] = svd(X);
     
     for i=1:m
         pi(i) = (1/k) *norm( V(i,:) ,2 );
     end
     
-    [C I] = datasample(X,k,pi);
+    [vals It] = sort(pi);
+    I = It( end - (k-1) : end );
+    C = vals( end - (k-1) : end );
+    %[C I] = datasample(X,k,pi);
 end

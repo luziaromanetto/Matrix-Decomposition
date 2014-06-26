@@ -21,10 +21,10 @@ function [A labels columns] = main(dataset, k, print )
      tline = fgetl(file);     
      labels = regexp(tline,' ','split');
      
-     columns = columnSelection(A,k);
+     [data columns] = CUR_SL(A,k);
 
      if( print == true )
-        columns
-        labels(columns)
+        columns'
+        labels(columns)'
      end
 end
