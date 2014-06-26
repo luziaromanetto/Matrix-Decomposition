@@ -16,7 +16,7 @@ Here is an example of use:
 
 > [ A labels columns] = main('../datasets/samsung/samsung', 12,true)
 
-its return in columns the 5 columns selected by the proposed method.
+its return in columns the 12 columns selected by the proposed method.
 
 Each dataset is given in three file: with extension .date containing the data matrix, with another extension .label
 containing the class label of each instance, and the last with extension .info that contains the description of the dataset.
