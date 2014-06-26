@@ -14,7 +14,7 @@ The columnSelection function given a data matrix and a number k, returns its k s
 
 Here is an example of use:
 
-> [ A labels columns] = main('./datasets/wine/wine', 5,true)
+> [ A labels columns] = main('../datasets/wine/wine', 5,true)
 
 its return in columns the 5 columns selected by the proposed method.
 
